@@ -32,6 +32,17 @@ is_male = {
     'Маша': False,
 }
 names = ['Оля', 'Петя', 'Вася', 'Маша']
+
+i = 0
+
+for name in names:
+    if is_male.get(names[i]) == False:        
+        gender = 'женский'
+    else:
+        gender = 'мужской'      
+    i += 1
+    print(f'{name}: {gender}')
+    
 # ???
 
 
