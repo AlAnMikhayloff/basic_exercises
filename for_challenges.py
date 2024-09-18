@@ -58,7 +58,12 @@ groups = [
     ['Вася', 'Маша', 'Саша', 'Женя'],
     ['Оля', 'Петя', 'Гриша'],
 ]
+
+for i, item in enumerate(groups):
+    print(f'Группа {i + 1}: {len(groups[i])} ученика')
+    
 # ???
+
 
 
 # Задание 5
@@ -72,4 +77,8 @@ groups = [
     ['Оля', 'Петя', 'Гриша'],
     ['Вася', 'Маша', 'Саша', 'Женя'],
 ]
+for i, item in enumerate(groups):
+    result = ", ".join(groups[i])
+    print(f'Группа {i + 1}: {result}')
+   
 # ???
