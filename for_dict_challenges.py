@@ -12,6 +12,11 @@ students = [
     {'first_name': 'Маша'},
     {'first_name': 'Петя'},
 ]
+
+names = [n['first_name'] for n in students]
+
+for name in set(names):
+    print(f'{name}: {names.count(name)}')
 # ???
 
 
@@ -26,6 +31,17 @@ students = [
     {'first_name': 'Маша'},
     {'first_name': 'Оля'},
 ]
+
+names = dict()
+
+for student in students:
+    if student['first_name'] not in names.keys():
+        names[student['first_name']] = 1
+    else:
+        names[student['first_name']] += 1
+for name, value in names.items():
+    if value == max(names.values()):
+        print(f'Самое частое имя среди учеников: {name}')    
 # ???
 
 
