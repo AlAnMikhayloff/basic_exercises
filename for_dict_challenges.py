@@ -108,49 +108,35 @@ is_male = {
     'Миша': True,
     'Даша': False,
 }
-print(type(school))
-print(type(school[0]))
-print(type(school[0]['students']))
-#print(school[0]['students'][0]['first_name'])
+
 j = 0
-number_of_girls = 2
-number_of_boys = 2
-
-n = 0
-class_gender = []
-
 
 for class_gender in school:
+    names_students = [m['first_name'] for m in school[j]['students']]
     
-    class_gender = school[j]['class']
-    j += 1
-    names_students = list(school[j]['students'].values())
+   
     for student_gen in names_students:
-        if is_male.get(names_students) == False:        
-                    gender = 'женский'
-        else:
-            gender = 'мужской'
-            print(f'{student_gen}: {gender}')
         
-        i = 0
-        for i in school[j]['students']:
-            
-            if school[j]['students'][i]['first_name'] not in names_students.keys():
-                names_students[school[j]['students'][i]['first_name']] = 1
+        list_girls = list()
+        list_boys = list()
+        
+        number_of_boys = 0
+        number_of_girls = 0
+        n = 0
+        
+        for i in range(len(school[j]['students'])):
+
+            if is_male.get(names_students[n]) == False:
+                list_girls.append(names_students[n])
+                number_of_girls = len(list_girls) 
             else:
-                names_students[school[j]['students'][i]['first_name']] += 1
-         
-       
-                
-        i += 1
-        print(student_gen)
-                
+                list_boys.append(names_students[n])    
+                number_of_boys = len(list_boys)
+            n += 1
+        
+    print(f"В классе {school[j]['class']}: девочек {number_of_girls}, мальчиков {number_of_boys}")
+    j += 1            
     
-    print(school[j]['students'][0]['first_name'])
-    j += 1
-    #print(name_student)
-print(f"В классе {school[j]['class']}: девочек {number_of_girls}, мальчиков {number_of_boys}")
-print(class_gender)
 # ???
 
 
