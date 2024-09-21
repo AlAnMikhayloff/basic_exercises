@@ -67,6 +67,26 @@ school_students = [
         {'first_name': 'Саша'},
     ],
 ]
+
+school_class = list()
+i = 0
+
+for school_class in school_students:
+    school_class = school_students[i]
+    
+    names_1 = dict()
+    i += 1
+    
+    for student in school_class:
+        if student['first_name'] not in names_1.keys():
+            names_1[student['first_name']] = 1
+        else:
+            names_1[student['first_name']] += 1
+    
+    for name, value in names_1.items():
+        if value == max(names_1.values()):
+            print(f'Самое частое имя в классе {i}: {name}')
+    
 # ???
 
 
@@ -88,6 +108,47 @@ is_male = {
     'Миша': True,
     'Даша': False,
 }
+print(type(school))
+print(type(school[0]))
+print(type(school[0]['students']))
+#print(school[0]['students'][0]['first_name'])
+j = 0
+number_of_girls = 2
+number_of_boys = 2
+
+n = 0
+class_gender = []
+names_students = {}
+
+for class_gender in school:
+    
+    class_gender = school[j]['class']
+    j += 1
+    #name = school[n]['students'][i-1]['first_name']
+    for student_1 in names_students:
+        i = 0
+        for i in school[j]['students']:
+            
+            if school[j]['students'][i]['first_name'] not in names_students.keys():
+                names_students[school[j]['students'][i]['first_name']] = 1
+            else:
+                names_students[school[j]['students'][i]['first_name']] += 1
+         
+            for name_student in school[j]['students'][i]:
+                if is_male.get(school[j]['students'][i]['first_name']) == False:        
+                    gender = 'женский'
+                else:
+                    gender = 'мужской'
+                    print(f'{name_student}: {gender}')
+            i += 1
+        print(student_1)
+                
+    
+    print(school[j]['students'][0]['first_name'])
+    j += 1
+    #print(name_student)
+print(f"В классе {school[j]['class']}: девочек {number_of_girls}, мальчиков {number_of_boys}")
+print(class_gender)
 # ???
 
 
