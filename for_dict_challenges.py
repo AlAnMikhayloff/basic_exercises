@@ -117,7 +117,7 @@ for class_gender in school:
    
     for student_gen in names_students:
         
-        list_girls = list()
+        list_girls = []
         list_boys = list()
         
         number_of_boys = 0
