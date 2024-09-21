@@ -118,14 +118,20 @@ number_of_boys = 2
 
 n = 0
 class_gender = []
-names_students = {}
+
 
 for class_gender in school:
     
     class_gender = school[j]['class']
     j += 1
-    #name = school[n]['students'][i-1]['first_name']
-    for student_1 in names_students:
+    names_students = list(school[j]['students'].values())
+    for student_gen in names_students:
+        if is_male.get(names_students) == False:        
+                    gender = 'женский'
+        else:
+            gender = 'мужской'
+            print(f'{student_gen}: {gender}')
+        
         i = 0
         for i in school[j]['students']:
             
@@ -134,14 +140,10 @@ for class_gender in school:
             else:
                 names_students[school[j]['students'][i]['first_name']] += 1
          
-            for name_student in school[j]['students'][i]:
-                if is_male.get(school[j]['students'][i]['first_name']) == False:        
-                    gender = 'женский'
-                else:
-                    gender = 'мужской'
-                    print(f'{name_student}: {gender}')
-            i += 1
-        print(student_1)
+       
+                
+        i += 1
+        print(student_gen)
                 
     
     print(school[j]['students'][0]['first_name'])
