@@ -133,8 +133,8 @@ for class_gender in school:
                 list_boys.append(names_students[n])    
                 number_of_boys = len(list_boys)
             n += 1
-        
-    print(f"В классе {school[j]['class']}: девочек {number_of_girls}, мальчиков {number_of_boys}")
+    a = school[j]['class']    
+    print(f"В классе {a}: девочек {number_of_girls}, мальчиков {number_of_boys}")
     j += 1            
     
 # ???
@@ -184,7 +184,7 @@ for class_gender in school:
         print(f"Больше всего мальчиков в классе {school[j]['class']}")
     else:
         print(f"Больше всего девочек в классе {school[j]['class']}")
-        
+
     j += 1            
     
 # ???
