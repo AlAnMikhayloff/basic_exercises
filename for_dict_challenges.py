@@ -156,5 +156,36 @@ is_male = {
     'Олег': True,
     'Миша': True,
 }
+j = 0
+
+for class_gender in school:
+    names_students = [m['first_name'] for m in school[j]['students']]
+    
+   
+    for student_gen in names_students:
+        
+        list_girls = []
+        list_boys = list()
+        
+        number_of_boys = 0
+        number_of_girls = 0
+        n = 0
+        
+        for i in range(len(school[j]['students'])):
+
+            if is_male.get(names_students[n]) == False:
+                list_girls.append(names_students[n])
+                number_of_girls = len(list_girls) 
+            else:
+                list_boys.append(names_students[n])    
+                number_of_boys = len(list_boys)
+            n += 1
+    if number_of_boys > number_of_girls:
+        print(f"Больше всего мальчиков в классе {school[j]['class']}")
+    else:
+        print(f"Больше всего девочек в классе {school[j]['class']}")
+        
+    j += 1            
+    
 # ???
 
