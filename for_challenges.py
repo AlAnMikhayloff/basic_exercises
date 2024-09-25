@@ -79,7 +79,7 @@ groups = [
     ['Вася', 'Маша', 'Саша', 'Женя'],
 ]
 for i, item in enumerate(groups):
-    result = ", ".join(groups[i])
+    result = ", ".join(item)
     print(f'Группа {i + 1}: {result}')
    
 # ???

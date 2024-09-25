@@ -25,16 +25,16 @@ print("Количество гласных букв:", count)
 
 # Вывести количество слов в предложении
 sentence = 'Мы приехали в гости'
-print(len(sentence.split(' ')))
+print(len(sentence.split()))
 # ???
 
 
 # Вывести первую букву каждого слова на отдельной строке
 sentence = 'Мы приехали в гости'
 i = 0
-for word in sentence.split(' '):
+for word in sentence.split():
     i+=1
-    print(sentence.split(' ')[i-1][0])
+    print(sentence.split()[i-1][0])
   
 # ???
 
@@ -45,9 +45,9 @@ sentence = 'Мы приехали в гости'
 i = 0
 sum_letter = 0
 
-for word in sentence.split(' '):
+for word in sentence.split():
     i+=1
-    sum_letter = sum_letter + len(sentence.split(' ')[i-1])
+    sum_letter = sum_letter + len(sentence.split()[i-1])
 
-print(sum_letter/len(sentence.split(' ')))    
+print(sum_letter/len(sentence.split()))    
 # ???

@@ -13,10 +13,15 @@ students = [
     {'first_name': 'Петя'},
 ]
 
-names = [n['first_name'] for n in students]
+names = {}
+for student in students:
+    if student['first_name'] not in names.keys():
+        names[student['first_name']] = 1
+    else:
+        names[student['first_name']] += 1
 
-for name in set(names):
-    print(f'{name}: {names.count(name)}')
+for name, value in names.items():
+    print(f'{name}: {value}')
 # ???
 
 
