@@ -165,8 +165,7 @@ j = 0
 
 for class_gender in school:
     names_students = [m['first_name'] for m in school[j]['students']]
-    
-   
+      
     for student_gen in names_students:
         
         list_girls = []
